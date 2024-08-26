@@ -35,14 +35,7 @@ Recenter() {
         name: "Set me up for seated and standing You won't have a boundary, so you'll need to stay put. To create a boundary later, go to Start > Mixed Reality Portal on your desktop."
     }).Click()
     WMR.WaitElement({ name: "I'm sure" }).Click()
-    WMR.WaitElement({ name: "Centre" }).Click()
-
-    try {
-        while 1 {
-            WMR.FindElement({ name: "Centre" }).Click() ; In case something goes wrong, like not enough light
-            Sleep(200)
-        }
-    }
+    WMR.WaitElement({ name: "Centre" }).Click() ; Sometimes it get's stuck when there's e.g not enough light. TODO: fix
 
     WMR.WaitElement({ name: "Expand"}) ; Make sure window doesn't hide too soon.
 
@@ -50,7 +43,7 @@ Recenter() {
         Send("#y")
     }
 
-    ; WinMinimize
+    WinMinimize
 }
 
 Recenter()
